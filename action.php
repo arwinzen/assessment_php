@@ -54,13 +54,19 @@
     }
 
     function disp_user3($arr){
-      $largest = [];
-      for($i = 0; $i <= sizeof($arr) - 1; $i++){
-        if ($arr[$i] > $arr[$i]){
-          $largest[] = $arr[$i];
-        }
+      // $largest = [];
+      // for($i = 0; $i <= sizeof($arr) - 1; $i++){
+      //   if ($arr[$i] > $arr[$i]){
+      //     $largest[] = $arr[$i];
+      //   }
+      // }
+      // return $largest;
+      rsort($arr);
+      $largest = array_reverse(array_slice($arr, 0, 3));
+      // return $largest;
+      foreach($largest as $el){
+        echo $el.",";
       }
-      return $largest;
     }
 
     echo "User 1 - ";
@@ -72,7 +78,7 @@
     echo "<br>";
 
     echo "User 3 - ";
-    print_r(disp_user3($user3));
+    disp_user3($user3);
     echo "<br>";
 
     ?>
